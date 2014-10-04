@@ -1,4 +1,4 @@
 readme.md
 
 
-trying to follow http://book.discovermeteor.com/
+Trying to follow http://book.discovermeteor.com/

@@ -25,9 +25,12 @@ var requireLogin = function(pause) {
       this.render(this.loadingTemplate);
     else
       this.render('accessDenied');
+
+
     pause();
   }
 }
 
 Router.onBeforeAction('loading');
 Router.onBeforeAction(requireLogin, {only: 'postSubmit'});
+Router.onBeforeAction(function() { clearErrors() });

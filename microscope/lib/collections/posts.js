@@ -26,7 +26,7 @@ validatePost = function (post) {
     errors.title = "Please fill in a headline";
   
   if (!post.url)
-    errors.url =  "Please fill in a URL";
+    errors.url =  "Please fill in a URL and make sure it has http or https";
 
   return errors;
 }

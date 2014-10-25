@@ -26,7 +26,7 @@ validatePost = function (post) {
     errors.title = "Please fill in a headline";
   
   if (!post.url)
-    errors.url =  "Please fill in a URL and make sure it has http or https";
+    errors.url =  "Please fill in a URL";
 
   return errors;
 }
@@ -57,7 +57,7 @@ Meteor.methods({
       author: user.username, 
       submitted: new Date(),
       commentsCount: 0,
-      upvoters: [],
+      upvoters: [], 
       votes: 0
     });
     
@@ -67,19 +67,20 @@ Meteor.methods({
       _id: postId
     };
   },
-
+  
   upvote: function(postId) {
     check(this.userId, String);
     check(postId, String);
-
+    
     var affected = Posts.update({
-      _id: postId,
+      _id: postId, 
       upvoters: {$ne: this.userId}
     }, {
       $addToSet: {upvoters: this.userId},
       $inc: {votes: 1}
     });
+    
     if (! affected)
-      throw new Meteor.Error('invalid', "you weren't able to upvote that post")
+      throw new Meteor.Error('invalid', "You weren't able to upvote that post");
   }
 });

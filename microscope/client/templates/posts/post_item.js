@@ -1,6 +1,6 @@
 Template.postItem.helpers({
   ownPost: function() {
-    return this.userId == Meteor.userId();
+    return this.userId === Meteor.userId();
   },
   domain: function() {
     var a = document.createElement('a');
@@ -8,6 +8,6 @@ Template.postItem.helpers({
     return a.hostname;
   },
   commentsCount: function() {
-  	return Comments.find({postId: this._id}).count();
+    return Comments.find({postId: this._id}).count();
   }
 });

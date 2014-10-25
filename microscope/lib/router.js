@@ -84,6 +84,11 @@ Router.map(function() {
   this.route('postSubmit', {
     path: '/submit'
   });
+
+  this.route('page', {
+    path: '/page'
+  });
+
 });
 
 var requireLogin = function(pause) {

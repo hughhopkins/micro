@@ -26,6 +26,9 @@
               {{> notifications}}
             </li>
           {{/if}}
+          <li class="{{activeRouteClass 'page'}}">
+            <a href="{{pathFor 'page'}}">Page</a>
+          </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           {{> loginButtons}}

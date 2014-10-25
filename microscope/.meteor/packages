@@ -6,7 +6,6 @@
 meteor-platform
 iron:router
 sacha:spin
-hugh:errors
 mizzao:bootstrap-3
 underscore
 ian:accounts-ui-bootstrap-3

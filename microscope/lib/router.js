@@ -16,7 +16,7 @@ PostsListController = RouteController.extend({
   findOptions: function() {
     return {sort: this.sort, limit: this.postsLimit()};
   },
-  onBeforeAction: function() {
+  subscriptions: function() {
     this.postsSub = Meteor.subscribe('posts', this.findOptions());
   },
   posts: function() {
@@ -91,6 +91,15 @@ Router.map(function() {
 
 });
 
+Router.route('/feed.xml', {
+  where: 'server',
+  name: 'rss',
+  action: function() {
+    this.response.write('Hello World');
+    this.response.end();
+  }
+});
+
 var requireLogin = function(pause) {
   if (! Meteor.user()) {
     if (Meteor.loggingIn()) {
@@ -103,6 +112,7 @@ var requireLogin = function(pause) {
   }
 }
 
-Router.onBeforeAction('loading');
-Router.onBeforeAction('dataNotFound', {only: 'postPage'});
+if (Meteor.isClient){
+  Router.onBeforeAction('dataNotFound', {only: 'postPage'});
 Router.onBeforeAction(requireLogin, {only: 'postSubmit'});
+}

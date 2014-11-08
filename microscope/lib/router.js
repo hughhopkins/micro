@@ -95,7 +95,11 @@ Router.route('/feed.xml', {
   where: 'server',
   name: 'rss',
   action: function() {
-    this.response.write('Hello World');
+    var feed = new RSS({
+      title: "New Microsopy Posts",
+      description: "the latest posts from the Microscope, the smallest new aggregator."
+    });
+    this.response.write(feed.xml());
     this.response.end();
   }
 });

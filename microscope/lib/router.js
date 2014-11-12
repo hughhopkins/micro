@@ -131,6 +131,21 @@ Router.route('/api/posts', {
   }
 });
 
+Router.route('/api/posts/:_id', {
+  where: 'server',
+  name: 'apiPost',
+  action: function() {
+    var post = Posts.findOne(this.params._id);
+    if(post){
+      this.response.write(JSON.stringify(post));
+    } else {
+      this.response.writeHead(404, {'Content-Type': 'text/html'});
+      this.response.write("Post not found.");
+    }
+    this.response.end();
+  }
+});
+
 var requireLogin = function(pause) {
   if (! Meteor.user()) {
     if (Meteor.loggingIn()) {

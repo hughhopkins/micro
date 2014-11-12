@@ -8,7 +8,7 @@ Template.analytics.helpers({
 		return user;
 	},
 	username: function() {
-		var username = Meteor.user().username;
-		return username;
+		var user = Meteor.user();
+		return user && user.username;
 	}
 });

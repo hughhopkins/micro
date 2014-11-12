@@ -89,6 +89,10 @@ Router.map(function() {
     path: '/page'
   });
 
+  this.route('numbers', {
+    path: '/numbers'
+  });
+
 });
 
 Router.route('/feed.xml', {
@@ -111,6 +115,16 @@ Router.route('/feed.xml', {
     });
 
     this.response.write(feed.xml());
+    this.response.end();
+  }
+});
+
+Router.route('/api/posts', {
+  where: 'server',
+  name: 'apiPosts',
+  action: function () {
+    var data = Posts.find().fetch();
+    this.response.write(JSON.stringfy(data));
     this.response.end();
   }
 });

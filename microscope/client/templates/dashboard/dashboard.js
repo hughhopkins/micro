@@ -5,3 +5,5 @@ Template.dashboard.rendered = function () {
     menuBar: false
   };
 };
+
+// <script src="https://www.gosquared.com/dashboard/embed-js/demo/GSN-106863-S"></script>

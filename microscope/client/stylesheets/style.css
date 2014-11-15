@@ -4,6 +4,11 @@
   width: 500px;
 }
 
+.dashboard {
+  height: 500px;
+  width: 700px;
+}
+
 #online-now {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   /* start with the text hidden */

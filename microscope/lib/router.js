@@ -86,16 +86,12 @@ Router.map(function() {
     path: '/submit'
   });
 
-  this.route('page', {
-    path: '/page'
+  this.route('dashboard', {
+    path: '/dashboard'
   });
 
   this.route('profile', {
     path: '/profile'
-  });
-
-  this.route('numbers', {
-    path: '/numbers'
   });
 
 });

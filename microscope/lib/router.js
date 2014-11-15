@@ -3,6 +3,7 @@ Router.configure({
   loadingTemplate: 'loading',
   notFoundTemplate: 'notFound',
   waitOn: function() { 
+    Meteor.subscribe('currentUser')
     return [Meteor.subscribe('notifications')]
   }
 });
@@ -16,7 +17,7 @@ PostsListController = RouteController.extend({
   findOptions: function() {
     return {sort: this.sort, limit: this.postsLimit()};
   },
-  onBeforeAction: function() {
+  subscriptions: function() {
     this.postsSub = Meteor.subscribe('posts', this.findOptions());
   },
   posts: function() {
@@ -84,6 +85,70 @@ Router.map(function() {
   this.route('postSubmit', {
     path: '/submit'
   });
+
+  this.route('page', {
+    path: '/page'
+  });
+
+  this.route('profile', {
+    path: '/profile'
+  });
+
+  this.route('numbers', {
+    path: '/numbers'
+  });
+
+});
+
+Router.route('/feed.xml', {
+  where: 'server',
+  name: 'rss',
+  action: function() {
+    var feed = new RSS({
+      title: "New Microsopy Posts",
+      description: "the latest posts from the Microscope, the smallest new aggregator."
+    });
+
+    Posts.find({}, {sort: {submitted: -1}, limit: 20}).forEach(function(post) {
+      feed.item({
+        title: post.title,
+        description: post.body,
+        author: post.author,
+        date: post.submitted,
+        url: '/posts/' + post._id
+      })
+    });
+
+    this.response.write(feed.xml());
+    this.response.end();
+  }
+});
+
+Router.route('/api/posts', {
+  where: 'server',
+  name: 'apiPosts',
+  action: function () {
+    var parameters = this.request.query,
+    limit = !!parameters.limit ? parseInt(parameters.limit) : 20,
+    data = Posts.find({}, {limit: limit, fields: {title: 1, author: 1, url: 1, submitted: 1, }}).fetch();
+    this.response.write(JSON.stringify(data));
+    this.response.end();
+  }
+});
+
+Router.route('/api/posts/:_id', {
+  where: 'server',
+  name: 'apiPost',
+  action: function() {
+    var post = Posts.findOne(this.params._id);
+    if(post){
+      this.response.write(JSON.stringify(post));
+    } else {
+      this.response.writeHead(404, {'Content-Type': 'text/html'});
+      this.response.write("Post not found.");
+    }
+    this.response.end();
+  }
 });
 
 var requireLogin = function(pause) {
@@ -98,6 +163,7 @@ var requireLogin = function(pause) {
   }
 }
 
-Router.onBeforeAction('loading');
-Router.onBeforeAction('dataNotFound', {only: 'postPage'});
-Router.onBeforeAction(requireLogin, {only: 'postSubmit'});
+if (Meteor.isClient){
+  Router.onBeforeAction('dataNotFound', {only: 'postPage'});
+  Router.onBeforeAction(requireLogin, {only: 'postSubmit'});
+}

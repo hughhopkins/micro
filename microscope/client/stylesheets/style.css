@@ -1,3 +1,10 @@
+/* me edits */
+.embed {
+  height: 500px;
+  width: 500px;
+}
+
+
 .grid-block, .main, .post, .comments li, .comment-form {
   background: #fff;
   -webkit-border-radius: 3px;

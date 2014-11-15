@@ -82,9 +82,7 @@ Router.map(function() {
     data: function() { return Posts.findOne(this.params._id); }
   });
   
-  this.route('postSubmit', {
-    path: '/submit'
-  });
+  Router.route('/submit', {name: 'postSubmit'});
 
   this.route('dashboard', {
     path: '/dashboard'
@@ -153,9 +151,9 @@ var requireLogin = function(pause) {
       this.render(this.loadingTemplate);
     } else {
       this.render('accessDenied');
-    }
-    
-    pause();
+    } 
+  } else {
+      this.next();
   }
 }
 

@@ -3,6 +3,7 @@ Router.configure({
   loadingTemplate: 'loading',
   notFoundTemplate: 'notFound',
   waitOn: function() { 
+    Meteor.subscribe('currentUser')
     return [Meteor.subscribe('notifications')]
   }
 });

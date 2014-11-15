@@ -25,6 +25,9 @@
             <li class="dropdown">
               {{> notifications}}
             </li>
+            <li class="{{activeRouteClass 'profile'}}">
+              <a href="{{pathFor 'profile'}}">Profile</a>
+            </li>
           {{/if}}
           <li class="{{activeRouteClass 'page'}}">
             <a href="{{pathFor 'page'}}">Page</a>

@@ -90,6 +90,10 @@ Router.map(function() {
     path: '/page'
   });
 
+  this.route('profile', {
+    path: '/profile'
+  });
+
   this.route('numbers', {
     path: '/numbers'
   });
@@ -161,5 +165,5 @@ var requireLogin = function(pause) {
 
 if (Meteor.isClient){
   Router.onBeforeAction('dataNotFound', {only: 'postPage'});
-Router.onBeforeAction(requireLogin, {only: 'postSubmit'});
+  Router.onBeforeAction(requireLogin, {only: 'postSubmit'});
 }

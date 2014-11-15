@@ -18,6 +18,9 @@
           <li class="{{activeRouteClass  'bestPosts'}}">
             <a href="{{pathFor 'bestPosts'}}">Best</a>
           </li>
+          <li class="{{activeRouteClass  'dashboard'}}">
+            <a href="{{pathFor 'dashboard'}}">Dashboard</a>
+          </li>
           {{#if currentUser}}
             <li class="{{activeRouteClass 'postSubmit'}}">
               <a href="{{pathFor 'postSubmit'}}">Submit Post</a>
@@ -29,9 +32,6 @@
               <a href="{{pathFor 'profile'}}">Profile</a>
             </li>
           {{/if}}
-          <li class="{{activeRouteClass 'page'}}">
-            <a href="{{pathFor 'page'}}">Page</a>
-          </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           {{> loginButtons}}

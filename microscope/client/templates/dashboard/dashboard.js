@@ -1,4 +1,4 @@
-Template.numbers.rendered = function () {
+Template.dashboard.rendered = function () {
   var GS = {
     dashboardContainer: '#dashboard',
     layout: 'default',

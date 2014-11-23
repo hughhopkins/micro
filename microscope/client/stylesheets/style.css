@@ -9,6 +9,8 @@
   width: 700px;
 }
 
+/* online now */
+
 #online-now {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   /* start with the text hidden */
@@ -19,6 +21,11 @@
 
 #online-now.visible {
   opacity: 1;
+}
+
+/* d3 */
+svg circle {
+  fill: #E32298;
 }
 
 /* css proivded by the discover meteor book */

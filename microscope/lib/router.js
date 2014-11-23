@@ -92,6 +92,10 @@ Router.map(function() {
     path: '/profile'
   });
 
+  this.route('vis', {
+    path: '/vis'
+  });
+
 });
 
 Router.route('/feed.xml', {

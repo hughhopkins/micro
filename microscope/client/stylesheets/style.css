@@ -28,6 +28,10 @@ svg circle {
   fill: #E32298;
 }
 
+svg dots {
+  fill: #15E626;
+}
+
 /* css proivded by the discover meteor book */
 
 .grid-block, .main, .post, .comments li, .comment-form {

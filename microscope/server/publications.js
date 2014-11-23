@@ -27,3 +27,13 @@ Meteor.publish('currentUser', function() {
 Meteor.publish('circles', function () {
   return Circles.find(); // everything
 });
+
+/* maybe delete green lights 
+Meteor.publish('GreenLights', function () {
+  return greenLights.find(); // everything
+});
+*/
+
+Meteor.publish('dots', function () {
+  return Dots.find(); // everything
+});

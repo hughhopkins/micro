@@ -1,0 +1,21 @@
+svg circle {
+  fill: #E32298;
+}
+
+svg dots {
+  fill: #15E626;
+}
+
+svg pulseCircles {
+	fill: steelblue;
+}
+
+.chart rect {
+  fill: steelblue;
+}
+
+.chart text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}

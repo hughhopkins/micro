@@ -23,14 +23,8 @@
   opacity: 1;
 }
 
-/* d3 */
-svg circle {
-  fill: #E32298;
-}
+/* d3 no in d3.css */
 
-svg dots {
-  fill: #15E626;
-}
 
 /* css proivded by the discover meteor book */
 

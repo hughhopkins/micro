@@ -33,7 +33,12 @@ Meteor.publish('GreenLights', function () {
   return greenLights.find(); // everything
 });
 */
-
+/* not working:
 Meteor.publish('dots', function () {
   return Dots.find(); // everything
+});
+*/
+
+Meteor.publish('pulseCircles', function () {
+  return PulseCircles.find(); // everything
 });

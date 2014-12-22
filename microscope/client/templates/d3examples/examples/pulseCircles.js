@@ -3,9 +3,9 @@ Deps.autorun(function() {
 });
 
 Template.pulseCircles.rendered = function () {
-  var svg, width = 700, height = 250, x;
+  var width = 700, height = 250, x;
 
-  svg = d3.select('#pulseCircles').append('svg')
+  var chart = d3.select(".pulseCircles")
     .attr('width', width)
     .attr('height', height);
 

@@ -1,6 +1,6 @@
 Meteor.startup(function () {
   if (PulseCircles.find().count() === 0) {
-    PulseCircles.insert({data: [59, 89, 119, 149, 179, 199]});
+    PulseCircles.insert({data: [59, 69, 49, 39, 79, 29]});
   }
 });
 

@@ -6,16 +6,38 @@ svg dots {
   fill: #15E626;
 }
 
-svg pulseCircles {
-	fill: steelblue;
+.pulseCircles {
+	fill: #27ae60;
 }
 
 .chart rect {
-  fill: steelblue;
+  fill: #e74c3c;
 }
 
 .chart text {
   fill: white;
   font: 10px sans-serif;
   text-anchor: end;
+}
+
+.chart2 rect {
+  fill: #27ae60;
+}
+
+.chart2 text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+.chart3 rect {
+	fill: #1abc9c;
+}
+
+.streamGraph {
+	width: 960px;
+}
+
+.threeCircles {
+	fill: #2980b9;
 }

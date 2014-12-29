@@ -1,3 +1,4 @@
+/*
 Deps.autorun(function() {
   Meteor.subscribe('pulseCircles');
 });
@@ -32,3 +33,4 @@ Template.pulseCircles.rendered = function () {
     changed: _.partial(drawPulseCircles, true)
   });
 };
+*/

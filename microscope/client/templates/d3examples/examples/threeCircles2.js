@@ -1,3 +1,4 @@
+/*
 Template.threeCircles2.rendered = function () {
 	var circle = d3.selectAll("circle")
 		circle.style("fill", "steelblue");
@@ -5,3 +6,4 @@ Template.threeCircles2.rendered = function () {
 		circle.data([123, 357, 224]);
 		circle.attr("r", function(d) { return Math.sqrt(d); });
 };
+*/

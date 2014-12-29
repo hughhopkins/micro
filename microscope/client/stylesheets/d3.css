@@ -34,6 +34,26 @@ svg dots {
 	fill: #1abc9c;
 }
 
+.chart3 text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+.chart4 rect {
+  fill: #d35400;
+}
+
+.chart4 text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
+
+.gsBarChart rect {
+  fill: #d35400;
+}
+
 .streamGraph {
 	width: 960px;
 }

@@ -23,3 +23,22 @@ Meteor.publish('notifications', function() {
 Meteor.publish('currentUser', function() {
   return Meteor.users.find(this.userId, {fields: {createdAt: 1}});
 });
+
+Meteor.publish('circles', function () {
+  return Circles.find(); // everything
+});
+
+/* maybe delete green lights 
+Meteor.publish('GreenLights', function () {
+  return greenLights.find(); // everything
+});
+*/
+/* not working:
+Meteor.publish('dots', function () {
+  return Dots.find(); // everything
+});
+*/
+
+Meteor.publish('pulseCircles', function () {
+  return PulseCircles.find(); // everything
+});

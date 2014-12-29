@@ -1,0 +1,1 @@
+/* GreenLights = new Mongo.collection('greenLights'); */

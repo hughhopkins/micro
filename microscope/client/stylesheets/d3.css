@@ -1,0 +1,63 @@
+svg circle {
+  fill: #E32298;
+}
+
+svg dots {
+  fill: #15E626;
+}
+
+.pulseCircles {
+	fill: #27ae60;
+}
+
+.chart rect {
+  fill: #e74c3c;
+}
+
+.chart text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+.chart2 rect {
+  fill: #27ae60;
+}
+
+.chart2 text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+.chart3 rect {
+	fill: #1abc9c;
+}
+
+.chart3 text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+.chart4 rect {
+  fill: #d35400;
+}
+
+.chart4 text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
+
+.gsBarChart rect {
+  fill: #d35400;
+}
+
+.streamGraph {
+	width: 960px;
+}
+
+.threeCircles {
+	fill: #2980b9;
+}

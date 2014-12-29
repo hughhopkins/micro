@@ -92,6 +92,14 @@ Router.map(function() {
     path: '/profile'
   });
 
+  this.route('d3examples', {
+    path: '/d3examples'
+  });
+
+  this.route('vis', {
+    path: '/vis'
+  });
+
 });
 
 Router.route('/feed.xml', {

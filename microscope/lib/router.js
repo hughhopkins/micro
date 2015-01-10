@@ -96,6 +96,10 @@ Router.map(function() {
     path: '/d3examples'
   });
 
+  this.route('meteorTips', {
+    path: '/meteorTips'
+  });
+
   this.route('vis', {
     path: '/vis'
   });

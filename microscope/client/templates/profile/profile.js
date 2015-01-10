@@ -14,5 +14,9 @@ Template.profile.helpers({
 	createdAt: function() {
 		var createdAt = Meteor.user().createdAt;
 		return createdAt;
+	},
+	setttingsJsonTest: function() {
+		var setttingsJsonTest = Meteor.settings.settingsTest;
+		return setttingsJsonTest;
 	}
 }); 

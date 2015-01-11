@@ -100,6 +100,10 @@ Router.map(function() {
     path: '/meteorTips'
   });
 
+  this.route('pw', {
+    path: '/pw'
+  });
+
   this.route('vis', {
     path: '/vis'
   });

@@ -18,5 +18,11 @@ Template.profile.helpers({
 	setttingsJsonTest: function() {
 		var setttingsJsonTest = Meteor.settings.settingsTest;
 		return setttingsJsonTest;
+	},
+	// todo: need to match some collections somehow
+	numberOfPosts: function() {
+		var userID = Meteor.userId();
+		var numberOfPosts = "4"
+		return numberOfPosts;
 	}
 }); 

@@ -1,6 +1,10 @@
 Template.pw.rendered = function() {
 	 var node = typeof require !== 'undefined';
 
+	 var sha1 = node ?
+      function(d) { return require('crypto').createHash('sha1').update(d).digest('hex'); } :
+      function(d){for(var j=0,a=0,c=[],k=[1732584193,4023233417,2562383102,271733878,3285377520],e,g,h,l,f,i=unescape(encodeURI(d)),b=i.length;a<=b;)c[a>>2]|=(i.charCodeAt(a)||128)<<8*(3-a++%4);for(c[d=(b>>6<<4)+15]=b<<3;j<=d;j+=16){b=k;for(a=0;80>a;b=[[(f=((i=b[0])<<5|i>>>27)+b[4]+(c[a]=16>a?~~c[j+a]:f<<1|f>>>31)+1518500249)+((e=b[1])&(g=b[2])|~e&(h=b[3])),l=f+(e^g^h)+341275144,f+(e&g|e&h|g&h)+882459459,l+1535694389][0|a++/20]|0,i,e<<30|e>>>2,g,h])f=c[a-3]^c[a-8]^c[a-14]^c[a-16];for(a=5;a;)k[--a]=k[a]+b[a]|0}for(d="";40>a;)d+=(k[a>>3]>>4*(7-a++%8)&15).toString(16);return d};
+
     // not sure what the below does
     function selectText(el) {
       if (document.selection) {
@@ -50,7 +54,7 @@ Template.pw.rendered = function() {
       var pass = pw.value;
       var three = keyThree.value;
 
-      var word = service + '||' + pass + '||' + three;
+      var word = sha1(service + '||' + pass + '||' + three);
 
       password.innerText = word;
 

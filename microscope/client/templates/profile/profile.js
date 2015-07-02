@@ -24,5 +24,13 @@ Template.profile.helpers({
 		var userID = Meteor.userId();
 		var numberOfPosts = "4"
 		return numberOfPosts;
+		_gs('unidentify');
 	}
-}); 
+});
+
+Tracker.autorun(function(){
+	if (Meteor.user() && !Meteor.loggingIn()) {
+
+		_gs('unidentify');
+	}
+});

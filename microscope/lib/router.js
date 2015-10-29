@@ -5,8 +5,18 @@ Router.configure({
   waitOn: function() { 
     Meteor.subscribe('currentUser')
     return [Meteor.subscribe('notifications')]
-  }
+    // removing this for now as it's creating a custom path: return _gs('track');
+  },
 });
+
+/*
+Router.configure({
+  onRun: function() {
+    var name = this.route.getName();
+    return _gs('track', 'window.location.pathname');
+  },
+});
+*/
 
 PostsListController = RouteController.extend({
   template: 'postsList',
@@ -106,6 +116,18 @@ Router.map(function() {
 
   this.route('vis', {
     path: '/vis'
+  });
+
+  this.route('plans', {
+    path: '/plans'
+  });
+
+  this.route('product', {
+    path: '/product'
+  });
+
+  this.route('enterprise', {
+    path: '/enterprise'
   });
 
 });

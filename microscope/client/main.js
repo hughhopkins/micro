@@ -15,6 +15,12 @@ Tracker.autorun(function(){
 
 Tracker.autorun(function(){
 	if (Meteor.user() && !Meteor.loggingIn()) {
+		mixpanel.track("Logged in");
+	}
+});
+
+Tracker.autorun(function(){
+	if (Meteor.user() && !Meteor.loggingIn()) {
 
 		var userID = Meteor.userId();
 
@@ -22,14 +28,16 @@ Tracker.autorun(function(){
 		  name: Meteor.user().username,
 		  email: Meteor.user().emails[0].address,
 		  createdAt: Meteor.user().createdAt,
-		  phone: Math.floor((Math.random() * 100000000) + 1),
+		  // phone: Math.floor((Math.random() * 100000000) + 1),
 		  company_size: 12,
 		  custom: { 
+		  	/* 
 		  	numberPosts: 79,
 		  	test1: 8393,
 		  	MRR: 1000000000,
 		  	location: "London",
 		  	simon: 99,
+		  	*/
 		  	site: "https://www.gosquared.com/",
 		  	personalSite: "http://hughhopkins.meteor.com"
 		   }

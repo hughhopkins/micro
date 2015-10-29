@@ -27,5 +27,6 @@ Template.postItem.events({
     _gs('event', 'Post upvoted', {
         event: 'properties'
     });
+    mixpanel.track("Post upvoted");
 	}
 });

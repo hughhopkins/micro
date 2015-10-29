@@ -126,6 +126,10 @@ Router.map(function() {
     path: '/product'
   });
 
+  this.route('enterprise', {
+    path: '/enterprise'
+  });
+
 });
 
 Router.route('/feed.xml', {

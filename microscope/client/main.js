@@ -16,6 +16,8 @@ Tracker.autorun(function(){
 Tracker.autorun(function(){
 	if (Meteor.user() && !Meteor.loggingIn()) {
 		mixpanel.track("Logged in");
+		mixpanel.identify("1234");
+		mixpanel.identify("4321");
 	}
 });
 
@@ -44,5 +46,6 @@ Tracker.autorun(function(){
 		};
 
 		_gs('identify', userID, user);
+		mixpanel.identify(userID);
 	}
 });
